@@ -20,14 +20,17 @@ export class PayPalComponent {
     this.myForm = this.fb.group({
       cardnumber: ['', [Validators.required, Validators.pattern(/^[0-9]*$/),Validators.minLength(16),Validators.maxLength(16)]],
       duedatej: ['', [Validators.required, Validators.pattern(/^[0-9]*$/),Validators.minLength(4),Validators.maxLength(4)]],
-      duedatem: ['', [Validators.required, Validators.pattern(/^[0-9]*$/),Validators.minLength(2),Validators.maxLength(2)]],
+      duedatem: ['', [Validators.required, Validators.pattern(/0[1-9]|1[0-2]/),Validators.minLength(2),Validators.maxLength(2)]],
       cvc: ['', [Validators.required, Validators.pattern(/^[0-9]*$/),Validators.minLength(3),Validators.maxLength(3)]]
     })
   }
 
   submitForm(){
-    this.myForm.reset();
-    this.backendService.buyTree(this.tree.type,this.tree.id).subscribe(()=> {this.router.navigate(['tree'])})
+    this.backendService.buyTree(this.tree.type,this.tree.id).subscribe(()=> {
+      alert("Thanks for buying!");
+      this.myForm.reset();
+      this.router.navigate(['tree'])
+    })
   }
 
 }

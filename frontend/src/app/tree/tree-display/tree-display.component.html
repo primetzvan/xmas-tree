@@ -1,8 +1,11 @@
 <mat-card *ngIf="tree !== null" >
     <p>Tree {{tree.id}} {{tree.type}}</p>
-    <ul>
+  <div id="flex">
+  <ul>
         <li>Height: {{tree.heightMeters}}</li>
         <li>Price: {{tree.price}}</li>
     </ul>
-    <button mat-raised-button color="primary" [disabled]="tree.sold" (click)="buyTree()">{{btnText}}</button>
+  <button mat-raised-button color="primary" [disabled]="tree.sold" (click)="buyTree()">{{btnText}}</button>
+  </div>
+  <div id="clear"></div>
 </mat-card>

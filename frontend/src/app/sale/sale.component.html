@@ -1,26 +1,32 @@
-<p>Tree {{tree.id}}:</p>
+<p id="treename">Tree {{tree.id}}:</p>
 <p>The {{tree.type}} has a heigt of {{tree.heightMeters}}m and costs {{tree.price}}€.</p>
-
+<p>To purchase the tree please enter your personal information.</p>
+<br>
 <form [formGroup]="myForm">
+
+  <p>Name:</p>
     <mat-form-field >
         <mat-label>Firstname:</mat-label>
         <input matInput formControlName="firstname" type="text" placeholder="Type firstname">
         <mat-error *ngIf="myForm.controls['firstname'].invalid">
-            Please enter a valid email address
+            Please enter a firstname!
         </mat-error>
     </mat-form-field>
 
     <mat-form-field>
         <mat-label>Lastname:</mat-label>
         <input matInput formControlName="lastname" type="text">
+      <mat-error *ngIf="myForm.controls['lastname'].invalid">
+        Please enter a lastname!
+      </mat-error>
     </mat-form-field>
 
-    <p>Addresse</p>
+    <p>Address:</p>
     <mat-form-field>
         <mat-label>Street:</mat-label>
         <input matInput formControlName="street" type="text">
       <mat-error *ngIf="myForm.controls['street'].invalid">
-            Street required
+        Please enter a streetname!
       </mat-error>
     </mat-form-field>
 
@@ -28,7 +34,7 @@
         <mat-label>PLZ:</mat-label>
         <input matInput formControlName="plz" minlength="4" type="text">
         <mat-error *ngIf="myForm.controls['plz'].invalid">
-            PLZ is required and ...
+          Please enter a valid plz!
         </mat-error>
     </mat-form-field>
 
@@ -36,9 +42,12 @@
         <mat-label>Location:</mat-label>
         <input matInput formControlName="location" type="text">
         <mat-error *ngIf="myForm.controls['location'].invalid">
-            Location required
+          Please enter a location!
         </mat-error>
     </mat-form-field>
 
-    <button mat-button color="primary" type="submit" [disabled]="!myForm.valid" (click)="submitForm()">Buy</button>
+  <br>
+
+    <button mat-flat-button color="primary" type="submit"  [disabled]="!myForm.valid" (click)="submitForm()">Buy</button>
+
 </form>

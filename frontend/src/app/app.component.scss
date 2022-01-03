@@ -1,7 +1,10 @@
 mat-card {
-  margin-left: 2em;
-  margin-top: 2em;
-  width: 40%;
+  width: 90%;
+  margin: 2em auto;
+}
+
+mat-card-header, mat-card-content{
+  margin: 1em 0;
 }
 
 mat-card-content {

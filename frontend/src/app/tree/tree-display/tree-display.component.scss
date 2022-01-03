@@ -6,10 +6,19 @@ ul{
     list-style: none;
 }
 
+#flex{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 button{
-    margin-top: 0.5em;
+}
+
+#clear{
+  clear: both;
 }
 
 mat-card{
     margin-bottom: 1em;
-}   
+}

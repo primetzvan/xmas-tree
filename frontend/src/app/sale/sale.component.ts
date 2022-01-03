@@ -20,13 +20,11 @@ export class SaleComponent {
     this.tree = dataService.tree!;
 
     this.myForm = this.fb.group({
-      firstname: ['', Validators.required],
-      lastname: ['', Validators.required],
-     // adresse: this.fb.group({
+      firstname: ['', [Validators.required, Validators.pattern(/^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ']+$/u)]],
+      lastname: ['', [Validators.required, Validators.pattern(/^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ']+$/u)]],
         street: ['', Validators.required],
         plz: ['', [Validators.required, Validators.pattern(/^[0-9]*$/),Validators.minLength(4)]],
-        location: ['']
-      //})
+        location: ['',Validators.required]
     })
   }
 
