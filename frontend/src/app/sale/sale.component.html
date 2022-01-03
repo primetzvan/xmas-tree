@@ -1,0 +1,44 @@
+<p>Tree {{tree.id}}:</p>
+<p>The {{tree.type}} has a heigt of {{tree.heightMeters}}m and costs {{tree.price}}€.</p>
+
+<form [formGroup]="myForm">
+    <mat-form-field >
+        <mat-label>Firstname:</mat-label>
+        <input matInput formControlName="firstname" type="text" placeholder="Type firstname">
+        <mat-error *ngIf="myForm.controls['firstname'].invalid">
+            Please enter a valid email address
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Lastname:</mat-label>
+        <input matInput formControlName="lastname" type="text">
+    </mat-form-field>
+
+    <p>Addresse</p>
+    <mat-form-field>
+        <mat-label>Street:</mat-label>
+        <input matInput formControlName="street" type="text">
+      <mat-error *ngIf="myForm.controls['street'].invalid">
+            Street required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>PLZ:</mat-label>
+        <input matInput formControlName="plz" minlength="4" type="text">
+        <mat-error *ngIf="myForm.controls['plz'].invalid">
+            PLZ is required and ...
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Location:</mat-label>
+        <input matInput formControlName="location" type="text">
+        <mat-error *ngIf="myForm.controls['location'].invalid">
+            Location required
+        </mat-error>
+    </mat-form-field>
+
+    <button mat-button color="primary" type="submit" [disabled]="!myForm.valid" (click)="submitForm()">Buy</button>
+</form>

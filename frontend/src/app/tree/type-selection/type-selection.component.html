@@ -1,0 +1,7 @@
+<mat-card>
+    <mat-select [disabled]="treeTypes === null" [(value)]="selectedType" (selectionChange)="typeSelectionChanged($event)">
+        <mat-option *ngFor="let treeType of treeTypes" [value]="treeType">
+            {{treeType}}
+        </mat-option>
+    </mat-select>
+</mat-card>

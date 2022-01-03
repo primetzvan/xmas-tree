@@ -1,0 +1,5 @@
+<app-tree-display *ngFor="let id of treesId" [treeId]="id" [type]="selectedTreeType"></app-tree-display>
+
+<div *ngIf="treesId == null">
+    <p>Nicht im Angebot</p>
+</div>

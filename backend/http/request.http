@@ -1,0 +1,11 @@
+POST http://localhost:8080/tree/Blaufichte/1/buy
+Content-Type: application/json
+
+{}
+
+###
+GET http://localhost:8080/tree/Edeltanne
+Accept: application/json
+
+###
+

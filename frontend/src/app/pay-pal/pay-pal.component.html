@@ -1,0 +1,45 @@
+<p>The {{tree.type}} has a price of {{tree.price}}€.</p>
+
+<form [formGroup]="myForm">
+  <mat-form-field >
+    <mat-label>Cardnumber:</mat-label>
+    <input matInput formControlName="cardnumber" type="text" placeholder="Type firstname">
+    <mat-error *ngIf="myForm.controls['cardnumber'].invalid">
+      Please enter a valid email address
+    </mat-error>
+  </mat-form-field>
+
+  <br>
+
+  <p>Duedate:</p>
+
+  <mat-form-field>
+    <mat-label>Year:</mat-label>
+    <input matInput formControlName="duedatej" type="text" placeholder="JJJJ">
+    <mat-error *ngIf="myForm.controls['duedatej'].invalid">
+      Street required
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Month:</mat-label>
+    <input matInput formControlName="duedatem" type="text" placeholder="MM">
+    <mat-error *ngIf="myForm.controls['duedatem'].invalid">
+      Street required
+    </mat-error>
+  </mat-form-field>
+
+  <br>
+
+  <mat-form-field>
+    <mat-label>CVC:</mat-label>
+    <input matInput formControlName="cvc" type="text">
+    <mat-error *ngIf="myForm.controls['cvc'].invalid">
+      PLZ is required and ...
+    </mat-error>
+  </mat-form-field>
+
+  <br>
+
+  <button mat-button color="primary" type="submit" [disabled]="!myForm.valid" (click)="submitForm()">Buy</button>
+</form>
